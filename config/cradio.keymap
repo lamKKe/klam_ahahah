@@ -37,7 +37,7 @@
             &kp SINGLE_QUOTE &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp V &kp L HRML(A, O, E, U) &kp I &kp D HRMR(H, T, N, S) &kp SEMICOLON &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp SPACE &lt 2 TAB &lt 1 RETURN &kp BACKSPACE 
             >;
         };
-/
+
         left_layer {
       bindings = <
         &kp LEFT_BRACE &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &none &none &kp BACKSLASH &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp EQUAL &trans &trans &trans &trans &none &kp SLASH &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &kp RIGHT_BRACE &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &none &none &none &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp UNDERSCORE &none &none &none &none 
