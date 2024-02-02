@@ -3,11 +3,11 @@ manifest:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
-      url-base: https://github.com/caksoylar
+      url-base: https://github.com/caksoylar/zmk.git
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: mouse-keys-3.2
+      remote: caksoylar
+      revision: main
       import: app/west.yml
   self:
     path: config
