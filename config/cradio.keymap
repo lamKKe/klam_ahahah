@@ -42,18 +42,18 @@
 
         left_layer {
       bindings = <
-        &kp LEFT_BRACE &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &none &none &kp BACKSLASH &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp EQUAL &trans &trans &trans &trans &none &kp SLASH &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &kp RIGHT_BRACE &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &none &none &none &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp UNDERSCORE &none &none &none &none 
+        &kp LEFT_BRACE &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &none &none &kp BACKSLASH &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp EQUAL &trans &trans &trans &trans &none &kp SLASH &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &kp RIGHT_BRACE &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &none &none &none &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp UNDERSCORE &none &lt 2 TAB &none &none 
       >;
     };
 
         right_layer {
       bindings = <
-        &none &none &mmv MOVE_UP &none &none &none &none &none &none &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &mkp LCLK &mkp RCLK 
+        &none &none &mmv MOVE_UP &none &none &none &none &kp UP &none &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none   &kp PAGE_UP &kp LEFT &kp DOWN &kp RIGHT &none &kp LSHIFT &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &none &kp PAGE_DOWN &none &none &none &none &none &mkp LCLK &mkp RCLK 
       >;
     };
         tri_layer {
             bindings = <
-        &bt BT_CLR &bt BT_PRV &bt BT_NXT &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+        &bt BT_CLR &bt BT_PRV &bt BT_NXT &none &none &none &none &none &none &none &none &none &none &kp ESC &none &none &kp ESC &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
     };
