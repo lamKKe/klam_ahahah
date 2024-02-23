@@ -11,14 +11,15 @@
 #define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
+
 / {
     behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <100>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
@@ -36,19 +37,21 @@
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-            &kp SINGLE_QUOTE &kp COMMA &kp DOT &kp P &kp Y &kp F &kp G &kp C &kp R &kp L HRML(A, O, E, U) &kp I &kp D HRMR(H, T, N, S) &kp SEMICOLON &kp Q &kp J &kp K &kp X &kp B &kp M &kp W &kp V &kp Z &kp SPACE &lt 2 TAB &lt 1 RETURN &kp BACKSPACE 
-            >;
+            &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P HRML(A, S, D, F) &kp G &kp H HRMR(J,K,L,SEMICOLON) &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp W &kp COMMA &kp DOT &kp SPACE &lt 2 TAB &lt 1 RETURN &kp BACKSPACE >;
         };
 
         left_layer {
       bindings = <
-        &kp LEFT_BRACE &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &none &none &kp BACKSLASH &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp EQUAL &trans &trans &trans &trans &none &kp SLASH &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &kp RIGHT_BRACE &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &none &none &none &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp UNDERSCORE &none &lt 2 TAB &none &none 
+        &kp LEFT_BRACE &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &none &none &kp BACKSLASH &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp EQUAL &trans &trans &trans &trans &none &kp SLASH &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &kp RIGHT_BRACE &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &none &none &none &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp MINUS &none &lt 2 TAB &none &none 
       >;
     };
 
         right_layer {
       bindings = <
-        &none &none &mmv MOVE_UP &none &none &none &none &kp UP &none &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &kp PAGE_UP &kp LEFT &kp DOWN &kp RIGHT &none &kp LSHIFT &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &none &kp PAGE_DOWN &none &none &none &none &none &none &mkp LCLK &mkp RCLK 
+        &none &none &mmv MOVE_UP &none &none &none &none &kp UP &none &none 
+        &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &mmv SCROLL_UP &kp LEFT &kp DOWN &kp RIGHT &none 
+        &kp LSHIFT &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &none &mmv SCROLL_DOWN &mkp LCLK &mkp RCLK &none &none 
+        &none &none &trans &trans 
       >;
     };
         tri_layer {
