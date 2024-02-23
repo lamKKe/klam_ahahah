@@ -12,14 +12,15 @@
 #define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
 
 
+
 / {
     behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <150>;
-            quick-tap-ms = <100>;
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
@@ -32,23 +33,36 @@
             then-layer = <3>;
         };
     };
+    #define U_MOUSE_SCROLL_MAX 100                    /* <--- New max speed setting (default: 10) */
+
+#undef SCROLL_UP
+#undef SCROLL_DOWN
+#undef SCROLL_LEFT
+#undef SCROLL_RIGHT
+#define SCROLL_UP SCROLL_VERT(U_MOUSE_SCROLL_MAX)
+#define SCROLL_DOWN SCROLL_VERT(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
+#define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
+
+&mwh {
+  time-to-max-speed-ms = <500>;                 /* <--- How long time until max speed is reached */
+};
 
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             bindings = <
-            &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P HRML(A, S, D, F) &kp G &kp H HRMR(J,K,L,SEMICOLON) &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp W &kp COMMA &kp DOT &kp SPACE &lt 2 TAB &lt 1 RETURN &kp BACKSPACE >;
+            &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P HRML(A, S, D, F) &kp G &kp H HRMR(J,K,L,SEMICOLON) &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp W &kp COMMA &kp DOT &kp SPACE &lt 2 TAB &lt 1 RETURN &kp BACKSPACE>;
         };
 
         left_layer {
       bindings = <
-        &kp LEFT_BRACE &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &none &none &kp BACKSLASH &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp EQUAL &trans &trans &trans &trans &none &kp SLASH &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &kp RIGHT_BRACE &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &none &none &none &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp MINUS &none &lt 2 TAB &none &none 
-      >;
+        &kp LEFT_BRACE &kp LEFT_BRACKET &kp LEFT_PARENTHESIS &none &none &kp BACKSLASH &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &kp EQUAL &trans &trans &trans &trans &none &kp SLASH &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp NUMBER_0 &kp RIGHT_BRACE &kp RIGHT_BRACKET &kp RIGHT_PARENTHESIS &none &none &none &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp MINUS &none &lt 2 TAB &none &none>;
     };
 
         right_layer {
       bindings = <
-        &none &none &mmv MOVE_UP &none &none &none &none &kp UP &none &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &mmv SCROLL_UP &kp LEFT &kp DOWN &kp RIGHT &none &kp LSHIFT &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &none &mmv SCROLL_DOWN &mkp LCLK &mkp RCLK &none &none &none &none &trans &kp DEL 
+        &none &none &mmv MOVE_UP &none &none &none &none &kp UP &none &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &mwh SCROLL_UP &kp LEFT &kp DOWN &kp RIGHT &none &kp LSHIFT &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &none &mwh SCROLL_DOWN &mkp LCLK &mkp RCLK &none &none &none &none &trans &kp DEL 
       >;
     };
         tri_layer {
