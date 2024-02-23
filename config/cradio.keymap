@@ -48,10 +48,7 @@
 
         right_layer {
       bindings = <
-        &none &none &mmv MOVE_UP &none &none &none &none &kp UP &none &none 
-        &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &mmv SCROLL_UP &kp LEFT &kp DOWN &kp RIGHT &none 
-        &kp LSHIFT &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &none &mmv SCROLL_DOWN &mkp LCLK &mkp RCLK &none &none 
-        &none &none &trans &kp DEL 
+        &none &none &mmv MOVE_UP &none &none &none &none &kp UP &none &none &none &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none &mmv SCROLL_UP &kp LEFT &kp DOWN &kp RIGHT &none &kp LSHIFT &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &none &mmv SCROLL_DOWN &mkp LCLK &mkp RCLK &none &none &none &none &trans &kp DEL 
       >;
     };
         tri_layer {
